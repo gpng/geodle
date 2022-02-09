@@ -19,7 +19,10 @@ const getLocation = async (name: string, id: number): Promise<Location> => {
   return {
     id,
     name,
-    coordinates: [res.data.results[0].LONGITUDE, res.data.results[0].LATITUDE],
+    coordinates: [
+      parseFloat(res.data.results[0].LONGITUDE),
+      parseFloat(res.data.results[0].LATITUDE),
+    ],
   };
 };
 
