@@ -17,6 +17,9 @@ const Index: FC = () => {
         <NextLink href="/sg-mrt" passHref>
           <Link>Singapore MRT Stations</Link>
         </NextLink>
+        <NextLink href="/sg-shopping-malls" passHref>
+          <Link>Singapore Shopping Malls</Link>
+        </NextLink>
       </VStack>
     </Container>
   );

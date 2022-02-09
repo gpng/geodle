@@ -39,6 +39,7 @@ const Guess = React.forwardRef<HTMLInputElement, Props>(
             disabled={!active || guess?.isCorrect}
             value={value}
             onChange={(e) => setValue(e.target.value)}
+            autoComplete="off"
           />
           <AutoCompleteList>
             {locations.map((mrt) => (
