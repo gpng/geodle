@@ -11,6 +11,7 @@ const SgShoppingMalls: FC = () => {
       description="How familiar are you with Singapore Shopping Malls?"
       maxGuesses={6}
       startDate={parseISO('2022-02-09')}
+      message="Daily location was changed between 10 Feb 000h to 0010h as the mall closed down."
     />
   );
 };

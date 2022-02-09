@@ -23,9 +23,10 @@ interface Props {
   maxGuesses: number;
   locations: Location[];
   startDate: Date;
+  message?: string;
 }
 
-const Geodle: FC<Props> = ({ title, description, maxGuesses, locations, startDate }) => {
+const Geodle: FC<Props> = ({ title, description, maxGuesses, locations, startDate, message }) => {
   const [guesses, setGuesses] = useState<GuessType[]>([]);
   const [activeIndex, setActiveIndex] = useState(-1);
   const [maxDistance, setMaxDistance] = useState(0);
@@ -189,6 +190,11 @@ const Geodle: FC<Props> = ({ title, description, maxGuesses, locations, startDat
           />
         ))}
       </VStack>
+      {message && (
+        <Text mb={8} fontSize="sm">
+          {message}
+        </Text>
+      )}
       {guesses.length === maxGuesses && !guesses[guesses.length - 1]?.isCorrect && (
         <Text mb={8}>:( The answer is {answer.current?.name}</Text>
       )}
