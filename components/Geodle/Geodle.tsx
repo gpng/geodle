@@ -97,7 +97,7 @@ const Geodle: FC<Props> = ({ title, description, maxGuesses, locations, startDat
         location: mrt,
         distance: dist,
         bearing: bear,
-        score: 100 - Math.floor(100 * (dist / maxDistance)),
+        score: Math.floor(100 - 100 * (dist / maxDistance)),
         isCorrect,
       },
     ];
