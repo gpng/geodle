@@ -767,11 +767,6 @@ const SHOPPING_MALLS: Location[] = [
     coordinates: [103.847832003713, 1.29920226381603],
   },
   {
-    id: 158,
-    name: 'Fernvale Point',
-    coordinates: [103.881167324822, 1.39631551842338],
-  },
-  {
     id: 162,
     name: 'Liang Court',
     coordinates: [103.844547179775, 1.29065860407434],
