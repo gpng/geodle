@@ -6,7 +6,7 @@ const StatisticsModal: FC = () => {
   const [countDown, setCountdown] = useState<Duration>();
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    const getCountdown = (): void => {
       const tomorrow = startOfTomorrow();
       setCountdown(
         intervalToDuration({
@@ -14,7 +14,10 @@ const StatisticsModal: FC = () => {
           end: tomorrow,
         }),
       );
-    }, 1000);
+    };
+
+    getCountdown();
+    const interval = setInterval(getCountdown, 1000);
 
     return () => {
       clearInterval(interval);
