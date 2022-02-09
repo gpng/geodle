@@ -1,5 +1,5 @@
 import { CopyIcon } from '@chakra-ui/icons';
-import { Button, Container, Heading, Text, useToast, VStack } from '@chakra-ui/react';
+import { Button, Container, Heading, Link, Text, useToast, VStack } from '@chakra-ui/react';
 import { bearing, distance, point } from '@turf/turf';
 import Countdown from 'components/Geodle/Countdown';
 import Guess from 'components/Geodle/Guess';
@@ -12,6 +12,7 @@ import GuessType from 'models/guess';
 import Location from 'models/location';
 import Statistics from 'models/statistics';
 import { NextSeo } from 'next-seo';
+import NextLink from 'next/link';
 import React, { FC, useEffect, useRef, useState } from 'react';
 import seedrandom from 'seedrandom';
 import { getGameState, getStatistics } from 'utils';
@@ -208,6 +209,11 @@ const Geodle: FC<Props> = ({ title, description, maxGuesses, locations, startDat
             Share!
           </Button>
           <Countdown />
+          <Text textAlign="center" mt={4}>
+            <NextLink href="/" passHref>
+              <Link textDecor="underline">Can&apos;t wait? Click here to try other Geodles!</Link>
+            </NextLink>
+          </Text>
         </>
       )}
     </Container>
