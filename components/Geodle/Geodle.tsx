@@ -161,13 +161,18 @@ const Geodle: FC<Props> = ({ title, description, maxGuesses, locations, startDat
       });
       text += `${blocks.join('')}\n`;
     });
-    navigator?.clipboard?.writeText(text);
-    toast({
-      title: 'Results copied to clipboard',
-      status: 'success',
-      duration: 2000,
-      isClosable: true,
-    });
+    if (navigator?.canShare?.({ text })) {
+      navigator.share({ text });
+      return;
+    } else {
+      navigator?.clipboard?.writeText(text);
+      toast({
+        title: 'Results copied to clipboard',
+        status: 'success',
+        duration: 2000,
+        isClosable: true,
+      });
+    }
   };
 
   return (
