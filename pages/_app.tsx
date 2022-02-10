@@ -7,8 +7,8 @@ const App: FC<AppProps> = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <DefaultSeo
-        title="Geodle :: Singapore MRT & LRT Stations"
-        description="How familiar are you with Singapore MRT & LRT stations?"
+        title="Geodle :: Find the daily location"
+        description="Geodle is a Wordle inspired location guessing game."
         additionalLinkTags={[
           {
             rel: 'apple-touch-icon',
