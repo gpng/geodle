@@ -1,8 +1,9 @@
 import { CopyIcon } from '@chakra-ui/icons';
-import { Button, Container, Heading, Link, Text, useToast, VStack } from '@chakra-ui/react';
+import { Box, Button, Container, Heading, Link, Text, useToast, VStack } from '@chakra-ui/react';
 import { bearing, distance, point } from '@turf/turf';
 import Countdown from 'components/Geodle/Countdown';
 import Guess from 'components/Geodle/Guess';
+import GuessMap from 'components/Geodle/GuessMap';
 import Header from 'components/Geodle/Header';
 import { differenceInDays, isSameDay } from 'date-fns';
 import format from 'date-fns/format';
@@ -174,7 +175,7 @@ const Geodle: FC<Props> = ({ title, description, maxGuesses, locations, startDat
   };
 
   return (
-    <Container>
+    <Container pb={16}>
       <NextSeo title={`Geodle :: ${title}`} description={description} />
       <Header title={title} />
       <Heading as="h2" textAlign="center" w="full" pt={4}>
@@ -223,6 +224,12 @@ const Geodle: FC<Props> = ({ title, description, maxGuesses, locations, startDat
               <Link textDecor="underline">Can&apos;t wait? Click here to try other Geodles!</Link>
             </NextLink>
           </Text>
+          <Box mt={4}>
+            <Heading as="h3" size="md" mb={2}>
+              Your Guesses
+            </Heading>
+            <GuessMap guesses={guesses} answer={answer.current} />
+          </Box>
         </>
       )}
     </Container>
