@@ -160,11 +160,9 @@ const Geodle: FC<Props> = ({ title, description, maxGuesses, locations, startDat
       range(0, 5 - blocks.length).forEach(() => {
         blocks.push('⬜');
       });
-      text += `${blocks.join('')}\n\nTry it out  ${window.location.origin}${
-        window.location.pathname
-      }`;
+      text += `${blocks.join('')}\n`;
     });
-    console.log('text: ', text);
+    text += `\nTry it out  ${window.location.origin}${window.location.pathname}`;
     if (navigator?.canShare?.({ text })) {
       navigator.share({ text });
     }
