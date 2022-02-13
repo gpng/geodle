@@ -63,7 +63,11 @@ const GuessMap: FC<Props> = ({ guesses, answer }) => {
         <Source
           id="line-string"
           type="geojson"
-          data={lineString(guesses.map((guess) => guess.location.coordinates))}
+          data={
+            guesses.length > 1
+              ? lineString(guesses.map((guess) => guess.location.coordinates))
+              : undefined
+          }
         >
           <Layer
             id="line-string"
