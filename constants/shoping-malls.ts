@@ -29,7 +29,7 @@ const SHOPPING_MALLS: Location[] = [
   {
     id: 5,
     name: 'Bedok Point',
-    coordinates: [103.947778439395, 1.33054849915481],
+    coordinates: [103.93238691974322, 1.3249310165937818],
   },
   {
     id: 6,
