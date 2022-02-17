@@ -1,6 +1,5 @@
 import {
   HStack,
-  Link,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -14,7 +13,6 @@ import {
 } from '@chakra-ui/react';
 import Countdown from 'components/Geodle/Countdown';
 import Statistics from 'models/statistics';
-import Image from 'next/image';
 import React, { FC, useEffect, useState } from 'react';
 import { getStatistics } from 'utils';
 
@@ -76,14 +74,6 @@ const StatisticsModal: FC<Props> = ({ isOpen, onClose, title }) => {
               </Stat>
             </HStack>
             <Countdown />
-            <Link href="https://www.buymeacoffee.com/gpng" isExternal>
-              <Image
-                src="/static/images/coffee.png"
-                alt="Buy Me A Coffee"
-                width={100}
-                height={27.5}
-              />
-            </Link>
           </VStack>
         </ModalBody>
       </ModalContent>

@@ -1,4 +1,5 @@
 import { ChakraProvider } from '@chakra-ui/react';
+import 'mapbox-gl/dist/mapbox-gl.css';
 import { DefaultSeo } from 'next-seo';
 import type { AppProps } from 'next/app';
 import React, { FC } from 'react';
