@@ -774,7 +774,7 @@ const SHOPPING_MALLS: Location[] = [
   {
     id: 163,
     name: 'Park Mall',
-    coordinates: [103.853518084567, 1.29966016502847],
+    coordinates: [103.8451131694873, 1.297930616663693],
   },
   {
     id: 165,
