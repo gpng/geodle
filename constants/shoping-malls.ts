@@ -209,7 +209,7 @@ const SHOPPING_MALLS: Location[] = [
   {
     id: 43,
     name: 'Tampines 1',
-    coordinates: [103.942894547542, 1.35264348783407],
+    coordinates: [103.94536986790156, 1.354035099012556],
   },
   {
     id: 44,
@@ -219,7 +219,7 @@ const SHOPPING_MALLS: Location[] = [
   {
     id: 45,
     name: 'Tekka Centre',
-    coordinates: [103.850609985486, 1.30617773048079],
+    coordinates: [103.85025673412824, 1.3063126658126656],
   },
   {
     id: 46,
@@ -329,7 +329,7 @@ const SHOPPING_MALLS: Location[] = [
   {
     id: 68,
     name: 'Djitsun Mall',
-    coordinates: [103.929604640137, 1.32605319910571],
+    coordinates: [103.84770916851366, 1.3728668732426361],
   },
   {
     id: 69,
