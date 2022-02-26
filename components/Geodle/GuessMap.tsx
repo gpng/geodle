@@ -1,6 +1,7 @@
 import { Box, Text } from '@chakra-ui/react';
 import { lineString } from '@turf/turf';
-import { MAPBOX_STYLE, MAPBOX_TOKEN } from 'constants/index';
+import { MAP_STYLE } from 'constants/index';
+import maplibregl from 'maplibre-gl';
 import Guess from 'models/guess';
 import Location from 'models/location';
 import Rainbow from 'rainbowvis.js';
@@ -46,13 +47,13 @@ const GuessMap: FC<Props> = ({ guesses, answer }) => {
   return (
     <Box ref={boxRef} width="full" height="300px">
       <Map
+        mapLib={maplibregl}
         initialViewState={{
           latitude: 1.3528246962995887,
           longitude: 103.80871128739545,
           zoom: 9,
         }}
-        mapboxAccessToken={MAPBOX_TOKEN}
-        mapStyle={MAPBOX_STYLE}
+        mapStyle={MAP_STYLE}
         style={{
           width: '100%',
           height: '100%',
