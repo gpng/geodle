@@ -5,7 +5,7 @@ import maplibregl from 'maplibre-gl';
 import Guess from 'models/guess';
 import Location from 'models/location';
 import Rainbow from 'rainbowvis.js';
-import React, { FC, useRef } from 'react';
+import React, { FC, useEffect, useRef, useState } from 'react';
 import Map, { Layer, MapRef, Marker, Source } from 'react-map-gl';
 
 const getColor = (score: number): string => {
@@ -19,9 +19,20 @@ const getColor = (score: number): string => {
 interface Props {
   guesses: Guess[];
   answer: Location;
+  isVisible: boolean;
 }
 
-const GuessMap: FC<Props> = ({ guesses, answer }) => {
+const GuessMap: FC<Props> = ({ guesses, answer, isVisible }) => {
+  const [hasLoaded, setHasLoaded] = useState(false);
+
+  useEffect(() => {
+    // once the map has been set to visible before, set hasLoaded so that we don't reload the map
+    // if the map is hidden and then shown again
+    if (isVisible) {
+      setHasLoaded(true);
+    }
+  }, [isVisible]);
+
   const boxRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<MapRef>(null);
 
@@ -44,8 +55,15 @@ const GuessMap: FC<Props> = ({ guesses, answer }) => {
     fitBounds();
   };
 
+  if (!hasLoaded && !isVisible) return null;
+
   return (
-    <Box ref={boxRef} width="full" height="300px">
+    <Box
+      ref={boxRef}
+      width="full"
+      height="300px"
+      display={!isVisible && hasLoaded ? 'none' : 'block'}
+    >
       <Map
         mapLib={maplibregl}
         initialViewState={{

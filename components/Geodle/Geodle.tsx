@@ -1,5 +1,15 @@
 import { CopyIcon } from '@chakra-ui/icons';
-import { Box, Button, Container, Heading, Link, Text, useToast, VStack } from '@chakra-ui/react';
+import {
+  Box,
+  Button,
+  Container,
+  Heading,
+  Link,
+  Text,
+  useToast,
+  VStack,
+  useBoolean,
+} from '@chakra-ui/react';
 import { bearing, distance, point } from '@turf/turf';
 import Countdown from 'components/Geodle/Countdown';
 import Guess from 'components/Geodle/Guess';
@@ -31,6 +41,7 @@ const Geodle: FC<Props> = ({ title, description, maxGuesses, locations, startDat
   const [guesses, setGuesses] = useState<GuessType[]>([]);
   const [activeIndex, setActiveIndex] = useState(-1);
   const [maxDistance, setMaxDistance] = useState(0);
+  const [showGuessMap, setShowGuessMap] = useBoolean(false);
 
   const guessRefs = useRef<HTMLElement[]>([]);
   const answer = useRef<Location>(null);
@@ -226,10 +237,16 @@ const Geodle: FC<Props> = ({ title, description, maxGuesses, locations, startDat
             </NextLink>
           </Text>
           <Box mt={4}>
-            <Heading as="h3" size="md" mb={2}>
-              Your Guesses
-            </Heading>
-            <GuessMap guesses={guesses} answer={answer.current} />
+            <Button
+              variant="ghost"
+              textDecor="underline"
+              size="md"
+              mb={2}
+              onClick={setShowGuessMap.toggle}
+            >
+              {showGuessMap ? 'Hide' : 'Show'} your guesses on map
+            </Button>
+            <GuessMap guesses={guesses} answer={answer.current} isVisible={showGuessMap} />
           </Box>
         </>
       )}
