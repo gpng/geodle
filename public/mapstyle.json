@@ -1,0 +1,25 @@
+{
+  "version": 8,
+  "name": "Grey",
+  "sprite": "mapbox://sprites/sla/cj7u5gsz51v7n2ss6fx5nt4bt?refresh=true",
+  "glyphs": "mapbox://fonts/sla/{fontstack}/{range}.pbf?refresh=true",
+  "sources": {
+    "Grey": {
+      "type": "raster",
+      "tiles": [
+        "https://maps-a.onemap.sg/v3/Grey_HD/{z}/{x}/{y}.png?fresh=true",
+        "https://maps-b.onemap.sg/v3/Grey_HD/{z}/{x}/{y}.png?fresh=true",
+        "https://maps-c.onemap.sg/v3/Grey_HD/{z}/{x}/{y}.png?fresh=true"
+      ],
+      "tileSize": 128,
+      "bounds": [103.596, 1.1443, 104.4309, 1.4835]
+    }
+  },
+  "layers": [
+    {
+      "id": "Grey",
+      "type": "raster",
+      "source": "Grey"
+    }
+  ]
+}

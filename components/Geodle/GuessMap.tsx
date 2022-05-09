@@ -1,6 +1,5 @@
 import { Box, Text } from '@chakra-ui/react';
 import { lineString } from '@turf/turf';
-import { MAP_STYLE } from 'constants/index';
 import maplibregl from 'maplibre-gl';
 import Guess from 'models/guess';
 import Location from 'models/location';
@@ -71,7 +70,31 @@ const GuessMap: FC<Props> = ({ guesses, answer, isVisible }) => {
           longitude: 103.80871128739545,
           zoom: 9,
         }}
-        mapStyle={MAP_STYLE}
+        mapStyle={{
+          version: 8,
+          name: 'Grey',
+          sprite: 'mapbox://sprites/sla/cj7u5gsz51v7n2ss6fx5nt4bt?refresh=true',
+          glyphs: 'mapbox://fonts/sla/{fontstack}/{range}.pbf?refresh=true',
+          sources: {
+            Grey: {
+              type: 'raster',
+              tiles: [
+                'https://maps-a.onemap.sg/v3/Grey_HD/{z}/{x}/{y}.png?fresh=true',
+                'https://maps-b.onemap.sg/v3/Grey_HD/{z}/{x}/{y}.png?fresh=true',
+                'https://maps-c.onemap.sg/v3/Grey_HD/{z}/{x}/{y}.png?fresh=true',
+              ],
+              tileSize: 128,
+              bounds: [103.596, 1.1443, 104.4309, 1.4835],
+            },
+          },
+          layers: [
+            {
+              id: 'Grey',
+              type: 'raster',
+              source: 'Grey',
+            },
+          ],
+        }}
         style={{
           width: '100%',
           height: '100%',
