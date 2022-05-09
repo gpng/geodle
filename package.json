@@ -15,14 +15,15 @@
     "date-fns": "^2.28.0",
     "framer-motion": "^6.2.4",
     "lodash": "^4.17.21",
-    "mapbox-gl": "^2.7.0",
+    "mapbox-gl": "^2.8.2",
+    "maplibre-gl": "^2.1.9",
     "next": "^12.1.0",
     "next-seo": "^5.1.0",
     "rainbowvis.js": "^1.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",
-    "react-map-gl": "^7.0.6",
+    "react-map-gl": "^7.0.11",
     "seedrandom": "^3.0.5",
     "viewport-mercator-project": "^7.0.4"
   },
@@ -39,10 +40,9 @@
     "@types/seedrandom": "^3.0.1",
     "@typescript-eslint/eslint-plugin": "^5.11.0",
     "eslint": "^8.8.0",
-    "eslint-config-next": "^12.0.10",
-    "eslint-config-prettier": "^8.3.0",
-    "maplibre-gl": "^2.1.6",
-    "prettier": "^2.5.1",
-    "typescript": "^4.5.5"
+    "eslint-config-next": "^12.1.6",
+    "eslint-config-prettier": "^8.5.0",
+    "prettier": "^2.6.2",
+    "typescript": "^4.6.4"
   }
 }
